@@ -70,9 +70,16 @@
   .filter-no{background:rgba(239,68,68,.15);color:var(--sell);}
   .filter-wait{background:rgba(148,163,184,.1);color:var(--neutral);}
 
+  /* RISK CALC ROW (NEW) */
+  .risk-row{margin-top:10px;padding-top:10px;border-top:1px solid var(--border);display:flex;align-items:center;gap:8px;}
+  .risk-row input{flex:1;background:var(--bg);border:1px solid var(--border);border-radius:6px;padding:6px 8px;color:var(--text);font-family:'JetBrains Mono',monospace;font-size:11px;outline:none;}
+  .risk-row input:focus{border-color:var(--gold-dim);}
+  .risk-result{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--gold);white-space:nowrap;font-weight:600;}
+  .risk-label{font-size:9px;color:var(--text-dim);text-transform:uppercase;white-space:nowrap;}
+
   /* TABS NAV */
   .tab-nav{display:flex;gap:0;margin:0 16px 14px;border:1px solid var(--border);border-radius:10px;overflow:hidden;}
-  .tab-btn{flex:1;padding:9px 4px;background:var(--surface2);border:none;color:var(--text-dim);font-family:'Space Grotesk',sans-serif;font-size:11px;font-weight:600;cursor:pointer;transition:all .2s;text-transform:uppercase;letter-spacing:.5px;}
+  .tab-btn{flex:1;padding:9px 4px;background:var(--surface2);border:none;color:var(--text-dim);font-family:'Space Grotesk',sans-serif;font-size:10px;font-weight:600;cursor:pointer;transition:all .2s;text-transform:uppercase;letter-spacing:.3px;}
   .tab-btn.active{background:var(--gold);color:#0a0c0f;}
   .tab-content{display:none;}
   .tab-content.active{display:block;}
@@ -109,6 +116,20 @@
   .badge-sell{background:rgba(239,68,68,.15);color:var(--sell);}
   .badge-neu{background:rgba(148,163,184,.1);color:var(--neutral);}
 
+  /* ECONOMIC CALENDAR (NEW) */
+  .news-card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:14px;margin-bottom:14px;}
+  .news-item{display:flex;align-items:center;gap:10px;padding:9px 0;border-bottom:1px solid var(--border);}
+  .news-item:last-child{border-bottom:none;}
+  .news-impact{width:8px;height:8px;border-radius:50%;flex-shrink:0;}
+  .news-impact.high{background:var(--sell);box-shadow:0 0 6px var(--sell);}
+  .news-impact.medium{background:var(--gold);}
+  .news-impact.low{background:var(--text-dim);}
+  .news-time{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--text-dim);width:46px;flex-shrink:0;}
+  .news-info{flex:1;}
+  .news-title{font-size:12px;font-weight:600;color:var(--text);}
+  .news-sub{font-size:10px;color:var(--text-dim);margin-top:1px;}
+  .news-soon{background:rgba(239,68,68,.1);border:1px solid var(--sell);border-radius:8px;padding:8px 10px;margin-bottom:10px;font-size:11px;color:var(--sell);display:none;}
+
   /* AI PANEL */
   .ai-card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:14px;margin-bottom:14px;}
   .ai-header{display:flex;align-items:center;gap:8px;margin-bottom:10px;}
@@ -127,6 +148,14 @@
   .btn-analyze:hover{transform:translateY(-1px);box-shadow:0 4px 20px rgba(245,200,66,.3);}
   .btn-analyze:disabled{opacity:.5;cursor:not-allowed;transform:none;}
 
+  /* AI ENGINE SELECTOR (NEW) */
+  .engine-selector{display:flex;gap:8px;margin-bottom:10px;}
+  .engine-opt{flex:1;padding:10px 8px;background:var(--surface2);border:1px solid var(--border);border-radius:8px;text-align:center;cursor:pointer;transition:all .2s;}
+  .engine-opt.active{border-color:var(--gold);background:rgba(245,200,66,.08);}
+  .engine-opt-name{font-size:12px;font-weight:700;}
+  .engine-opt-sub{font-size:9px;color:var(--text-dim);margin-top:2px;}
+  .engine-opt.active .engine-opt-name{color:var(--gold);}
+
   /* SETTINGS TAB */
   .settings-card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:14px;margin-bottom:14px;}
   .settings-label{font-size:10px;text-transform:uppercase;letter-spacing:.8px;color:var(--text-dim);margin-bottom:8px;font-weight:600;}
@@ -135,34 +164,37 @@
   .apikey-input:focus{border-color:var(--gold-dim);}
   .btn-save{background:var(--surface2);border:1px solid var(--gold-dim);color:var(--gold);font-size:12px;font-weight:600;padding:9px 14px;border-radius:7px;cursor:pointer;white-space:nowrap;}
   .groq-badge{display:inline-block;background:linear-gradient(135deg,#f55036,#ff6b35);color:#fff;font-size:9px;font-weight:700;padding:2px 6px;border-radius:3px;letter-spacing:.5px;margin-left:4px;vertical-align:middle;}
-  .install-card{background:var(--surface2);border:1px solid var(--gold-dim);border-radius:12px;padding:14px;margin-bottom:14px;}
-  .install-steps{margin-top:10px;}
-  .install-step{display:flex;gap:10px;margin-bottom:10px;align-items:flex-start;}
-  .step-num{width:22px;height:22px;background:var(--gold);color:#0a0c0f;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;flex-shrink:0;}
-  .step-text{font-size:12px;line-height:1.5;color:var(--text);}
-  .step-text a{color:var(--gold);}
-  .github-box{background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:10px 12px;margin-top:8px;font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--text-dim);}
+  .claude-badge{display:inline-block;background:linear-gradient(135deg,#d97757,#c2410c);color:#fff;font-size:9px;font-weight:700;padding:2px 6px;border-radius:3px;letter-spacing:.5px;margin-left:4px;vertical-align:middle;}
 
   /* NOTIF TOAST */
-  .toast{position:fixed;bottom:90px;left:50%;transform:translateX(-50%) translateY(20px);background:var(--surface);border:1px solid var(--gold);color:var(--text);padding:10px 18px;border-radius:8px;font-size:13px;font-weight:600;opacity:0;transition:all .3s;z-index:999;white-space:nowrap;}
+  .toast{position:fixed;bottom:90px;left:50%;transform:translateX(-50%) translateY(20px);background:var(--surface);border:1px solid var(--gold);color:var(--text);padding:10px 18px;border-radius:8px;font-size:13px;font-weight:600;opacity:0;transition:all .3s;z-index:999;white-space:nowrap;max-width:90vw;overflow:hidden;text-overflow:ellipsis;}
   .toast.show{opacity:1;transform:translateX(-50%) translateY(0);}
 
   /* BOTTOM NAV */
   .bottom-nav{position:fixed;bottom:0;left:0;right:0;background:var(--surface);border-top:1px solid var(--border);display:flex;z-index:100;}
-  .nav-btn{flex:1;padding:10px 4px;background:none;border:none;color:var(--text-dim);font-size:10px;font-family:'Space Grotesk',sans-serif;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:3px;transition:color .2s;}
+  .nav-btn{flex:1;padding:10px 2px;background:none;border:none;color:var(--text-dim);font-size:9px;font-family:'Space Grotesk',sans-serif;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:3px;transition:color .2s;}
   .nav-btn.active{color:var(--gold);}
-  .nav-icon{font-size:18px;}
+  .nav-icon{font-size:16px;}
 
   .last-update{text-align:center;font-size:11px;color:var(--text-dim);font-family:'JetBrains Mono',monospace;padding:10px 0 4px;}
   .refresh-btn{background:none;border:1px solid var(--border);color:var(--text-dim);font-size:11px;padding:4px 10px;border-radius:5px;cursor:pointer;margin-top:6px;display:inline-block;}
 
-  /* SIGNAL HISTORY */
+  /* SIGNAL HISTORY / WIN RATE (UPGRADED) */
   .history-card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:14px;margin-bottom:14px;}
   .history-item{display:flex;align-items:center;justify-content:space-between;padding:8px 0;border-bottom:1px solid var(--border);}
   .history-item:last-child{border-bottom:none;}
   .history-signal{font-size:12px;font-weight:700;}
   .history-price{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--text-dim);}
   .history-time{font-size:10px;color:var(--text-dim);}
+  .history-status{font-size:9px;font-weight:700;padding:2px 7px;border-radius:4px;margin-top:3px;display:inline-block;}
+  .status-win{background:rgba(34,197,94,.15);color:var(--buy);}
+  .status-loss{background:rgba(239,68,68,.15);color:var(--sell);}
+  .status-open{background:rgba(245,200,66,.12);color:var(--gold);}
+
+  .winrate-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-bottom:14px;}
+  .winrate-card{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:12px 8px;text-align:center;}
+  .winrate-val{font-family:'JetBrains Mono',monospace;font-size:18px;font-weight:700;color:var(--gold);}
+  .winrate-label{font-size:9px;color:var(--text-dim);text-transform:uppercase;margin-top:3px;letter-spacing:.5px;}
 </style>
 </head>
 <body>
@@ -188,6 +220,11 @@
     <div class="price-change" id="price-change">--</div>
   </div>
   <div class="price-meta" id="price-meta">XAU/USD · Memuat data...</div>
+</div>
+
+<!-- NEWS SOON WARNING (NEW) -->
+<div class="main" style="padding-top:10px">
+  <div class="news-soon" id="news-soon"></div>
 </div>
 
 <!-- SIGNAL BANNER -->
@@ -226,6 +263,17 @@
     <span class="filter-tag filter-wait">H4: menunggu</span>
     <span class="filter-tag filter-wait">M5: menunggu</span>
   </div>
+  <!-- RISK CALCULATOR (NEW) -->
+  <div class="risk-row">
+    <span class="risk-label">Saldo $</span>
+    <input type="number" id="risk-balance" placeholder="1000" value="1000" oninput="calcLotSize()">
+    <span class="risk-label">Risk %</span>
+    <input type="number" id="risk-percent" placeholder="1" value="1" oninput="calcLotSize()" style="max-width:50px">
+  </div>
+  <div class="risk-row" style="border-top:none;padding-top:6px;justify-content:space-between">
+    <span class="risk-label">→ Lot Size Disarankan</span>
+    <span class="risk-result" id="risk-lot">- lot</span>
+  </div>
 </div>
 
 <!-- TAB NAV -->
@@ -233,6 +281,7 @@
   <button class="tab-btn active" onclick="switchTab('chart',this)">📈 Chart</button>
   <button class="tab-btn" onclick="switchTab('mtf',this)">🔍 MTF</button>
   <button class="tab-btn" onclick="switchTab('ai',this)">🤖 AI</button>
+  <button class="tab-btn" onclick="switchTab('news',this)">📰 News</button>
   <button class="tab-btn" onclick="switchTab('history',this)">📋 Log</button>
 </div>
 
@@ -255,595 +304,4 @@
       <div class="ind-label">RSI (14)</div>
       <div class="ind-value" id="rsi-val" style="color:var(--gold)">--</div>
       <div class="ind-status" id="rsi-status" style="color:var(--text-dim)">Menunggu</div>
-      <div class="ind-bar"><div class="ind-bar-fill" id="rsi-bar" style="width:0%;background:var(--gold)"></div></div>
-    </div>
-    <div class="indicator-card">
-      <div class="ind-label">MACD</div>
-      <div class="ind-value" id="macd-val" style="color:var(--gold)">--</div>
-      <div class="ind-status" id="macd-status" style="color:var(--text-dim)">Menunggu</div>
-      <div class="ind-bar"><div class="ind-bar-fill" id="macd-bar" style="width:50%;background:var(--gold)"></div></div>
-    </div>
-    <div class="indicator-card">
-      <div class="ind-label">EMA 20 vs 50</div>
-      <div class="ind-value" id="ema-val" style="color:var(--gold)">--</div>
-      <div class="ind-status" id="ema-status" style="color:var(--text-dim)">Menunggu</div>
-      <div class="ind-bar"><div class="ind-bar-fill" id="ema-bar" style="width:0%;background:var(--gold)"></div></div>
-    </div>
-    <div class="indicator-card">
-      <div class="ind-label">Bollinger Band</div>
-      <div class="ind-value" id="bb-val" style="color:var(--gold)">--</div>
-      <div class="ind-status" id="bb-status" style="color:var(--text-dim)">Menunggu</div>
-      <div class="ind-bar"><div class="ind-bar-fill" id="bb-bar" style="width:50%;background:var(--gold)"></div></div>
-    </div>
-  </div>
-  <div class="last-update">
-    Update: <span id="last-update-time">-</span><br>
-    <button class="refresh-btn" onclick="fetchPrice()">↻ Refresh</button>
-  </div>
-</div>
-
-<!-- TAB: MTF -->
-<div class="tab-content main" id="tab-mtf">
-  <div class="mtf-card">
-    <div class="card-header"><span class="card-title">Analisis Multi-Timeframe</span></div>
-    <table class="mtf-table">
-      <thead><tr><th>TF</th><th>Trend</th><th>RSI</th><th>EMA</th><th>Sinyal</th></tr></thead>
-      <tbody id="mtf-body">
-        <tr><td colspan="5" style="color:var(--text-dim);text-align:center;padding:16px">Klik Analisis AI untuk memuat</td></tr>
-      </tbody>
-    </table>
-  </div>
-</div>
-
-<!-- TAB: AI -->
-<div class="tab-content main" id="tab-ai">
-  <div class="settings-card" style="margin-bottom:10px;">
-    <div class="settings-label">🔑 Groq API Key <span class="groq-badge">GRATIS</span></div>
-    <div class="apikey-row">
-      <input class="apikey-input" type="password" id="api-key-input" placeholder="gsk_...">
-      <button class="btn-save" onclick="saveKey()">Simpan</button>
-    </div>
-    <div id="key-status" style="font-size:11px;margin-top:6px;color:var(--text-dim)">
-      Daftar gratis: <a href="https://console.groq.com" target="_blank" style="color:var(--gold)">console.groq.com</a>
-    </div>
-  </div>
-  <button class="btn-analyze" id="analyze-btn" onclick="runFullAnalysis()">⚡ Analisis AI Sekarang</button>
-  <div class="ai-card">
-    <div class="ai-header">
-      <div class="ai-icon">🤖</div>
-      <div>
-        <div class="ai-title">Analisis AI <span class="groq-badge">Groq</span></div>
-        <div class="ai-sub">LLaMA 3.1 · Gratis · Cepat</div>
-      </div>
-    </div>
-    <div id="ai-output"><span class="placeholder">Tekan tombol Analisis AI untuk mendapatkan analisis lengkap...</span></div>
-  </div>
-</div>
-
-<!-- TAB: HISTORY/LOG -->
-<div class="tab-content main" id="tab-history">
-  <div class="history-card">
-    <div class="card-header">
-      <span class="card-title">Log Sinyal</span>
-      <button onclick="clearHistory()" style="background:none;border:1px solid var(--border);color:var(--text-dim);font-size:10px;padding:3px 8px;border-radius:5px;cursor:pointer;">Hapus</button>
-    </div>
-    <div id="history-list">
-      <div style="color:var(--text-dim);font-size:12px;text-align:center;padding:20px;">Belum ada log sinyal</div>
-    </div>
-  </div>
-</div>
-
-<!-- BOTTOM NAV -->
-<div class="bottom-nav">
-  <button class="nav-btn active" id="nav-chart" onclick="switchNav('chart')"><span class="nav-icon">📈</span>Chart</button>
-  <button class="nav-btn" id="nav-mtf" onclick="switchNav('mtf')"><span class="nav-icon">🔍</span>MTF</button>
-  <button class="nav-btn" id="nav-ai" onclick="switchNav('ai')"><span class="nav-icon">🤖</span>AI</button>
-  <button class="nav-btn" id="nav-history" onclick="switchNav('history')"><span class="nav-icon">📋</span>Log</button>
-</div>
-
-<!-- TOAST -->
-<div class="toast" id="toast"></div>
-
-<script>
-// ============ STATE ============
-let currentPrice = null;
-let priceHistory = [];
-let currentTF = 'M5';
-let chartInstance = null;
-let apiKey = localStorage.getItem('xauai_groq_key') || '';
-let notifEnabled = false;
-let signalHistory = JSON.parse(localStorage.getItem('xauai_history') || '[]');
-let lastSignal = '';
-let autoAnalyzeInterval = null;
-
-// ============ INIT ============
-document.addEventListener('DOMContentLoaded', () => {
-  if (apiKey) {
-    document.getElementById('api-key-input').value = apiKey;
-    document.getElementById('key-status').innerHTML = '✓ Tersimpan · <a href="https://console.groq.com" target="_blank" style="color:var(--gold)">console.groq.com</a>';
-    document.getElementById('key-status').style.color = 'var(--buy)';
-  }
-  updateClock();
-  setInterval(updateClock, 1000);
-  fetchPrice();
-  setInterval(fetchPrice, 60000);
-  renderHistory();
-
-  // Auto analyze setiap 5 menit jika ada key
-  if (apiKey) {
-    autoAnalyzeInterval = setInterval(() => {
-      if (currentPrice) runFullAnalysis(true);
-    }, 300000);
-  }
-
-  // Request notif permission
-  if ('Notification' in window) {
-    Notification.requestPermission();
-  }
-});
-
-function updateClock() {
-  document.getElementById('header-time').textContent =
-    new Date().toLocaleTimeString('id-ID',{hour:'2-digit',minute:'2-digit',second:'2-digit'});
-}
-
-function showToast(msg, duration=3000) {
-  const t = document.getElementById('toast');
-  t.textContent = msg;
-  t.classList.add('show');
-  setTimeout(() => t.classList.remove('show'), duration);
-}
-
-function saveKey() {
-  const key = document.getElementById('api-key-input').value.trim();
-  if (key.length < 10) {
-    document.getElementById('key-status').textContent = '✗ API key terlalu pendek';
-    document.getElementById('key-status').style.color = 'var(--sell)';
-    return;
-  }
-  apiKey = key;
-  localStorage.setItem('xauai_groq_key', key);
-  document.getElementById('key-status').innerHTML = '✓ Tersimpan!';
-  document.getElementById('key-status').style.color = 'var(--buy)';
-  showToast('✓ API key disimpan');
-  if (!autoAnalyzeInterval) {
-    autoAnalyzeInterval = setInterval(() => { if (currentPrice) runFullAnalysis(true); }, 300000);
-  }
-}
-
-function toggleNotif() {
-  notifEnabled = !notifEnabled;
-  const btn = document.getElementById('notif-btn');
-  btn.classList.toggle('active', notifEnabled);
-  btn.textContent = notifEnabled ? '🔔 ON' : '🔔 Notif';
-  showToast(notifEnabled ? '🔔 Notifikasi aktif' : '🔕 Notifikasi mati');
-  if (notifEnabled && 'Notification' in window) Notification.requestPermission();
-}
-
-function sendNotif(title, body) {
-  if (!notifEnabled) return;
-  if ('Notification' in window && Notification.permission === 'granted') {
-    new Notification(title, { body, icon: 'https://via.placeholder.com/64/f5c842/000000?text=XAU' });
-  }
-}
-
-// ============ TABS ============
-function switchTab(tab, btn) {
-  document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
-  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
-  document.getElementById('tab-'+tab).classList.add('active');
-  if (btn) btn.classList.add('active');
-}
-
-function switchNav(tab) {
-  document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
-  document.getElementById('nav-'+tab).classList.add('active');
-  document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
-  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
-  document.getElementById('tab-'+tab).classList.add('active');
-  const tabBtn = document.querySelector(`.tab-btn[onclick*="${tab}"]`);
-  if (tabBtn) tabBtn.classList.add('active');
-}
-
-// ============ FETCH PRICE ============
-async function fetchPrice() {
-  const proxies = [
-    `https://corsproxy.io/?${encodeURIComponent('https://query1.finance.yahoo.com/v8/finance/chart/GC=F?interval=1h&range=5d')}`,
-    `https://api.allorigins.win/get?url=${encodeURIComponent('https://query1.finance.yahoo.com/v8/finance/chart/GC=F?interval=1h&range=5d')}`
-  ];
-  for (const proxy of proxies) {
-    try {
-      const res = await fetch(proxy, {signal: AbortSignal.timeout(8000)});
-      const text = await res.text();
-      let data;
-      try { const w = JSON.parse(text); data = w.contents ? JSON.parse(w.contents) : w; }
-      catch { data = JSON.parse(text); }
-      const chart = data.chart?.result?.[0];
-      if (!chart) continue;
-      const closes = chart.indicators.quote[0].close;
-      const timestamps = chart.timestamp;
-      const valid = closes.map((c,i) => ({c, t: timestamps[i]})).filter(x => x.c != null && !isNaN(x.c));
-      if (valid.length > 10) { processPrice(valid); return; }
-    } catch(e) { continue; }
-  }
-  document.getElementById('price-meta').textContent = '⚠ Gagal memuat harga – coba refresh';
-}
-
-function processPrice(valid) {
-  priceHistory = valid;
-  const last = valid[valid.length-1].c;
-  const prev = valid[valid.length-2]?.c || last;
-  currentPrice = last;
-  const change = last - prev;
-  const changePct = (change/prev*100).toFixed(2);
-  const isUp = change >= 0;
-  document.getElementById('price-display').textContent = `$${last.toFixed(2)}`;
-  const chEl = document.getElementById('price-change');
-  chEl.textContent = `${isUp?'+':''}${change.toFixed(2)} (${isUp?'+':''}${changePct}%)`;
-  chEl.className = `price-change ${isUp?'up':'down'}`;
-  document.getElementById('price-meta').textContent = `XAU/USD · ${new Date().toLocaleTimeString('id-ID')}`;
-  document.getElementById('last-update-time').textContent = new Date().toLocaleString('id-ID');
-  renderChart(valid, currentTF);
-  computeIndicators(valid.map(x => x.c));
-  updateEntryBox(valid.map(x => x.c));
-}
-
-// ============ CHART ============
-function renderChart(data, tf) {
-  let sliced;
-  if (tf==='M5') sliced = data.slice(-24);
-  else if (tf==='H1') sliced = data.slice(-48);
-  else if (tf==='H4') sliced = data.filter((_,i)=>i%4===0).slice(-30);
-  else sliced = data.filter((_,i)=>i%24===0).slice(-20);
-
-  const labels = sliced.map(x => {
-    const d = new Date(x.t*1000);
-    return tf==='D1'
-      ? d.toLocaleDateString('id-ID',{day:'2-digit',month:'short'})
-      : d.toLocaleTimeString('id-ID',{hour:'2-digit',minute:'2-digit'});
-  });
-  const prices = sliced.map(x => x.c);
-  const isUp = prices[prices.length-1] >= prices[0];
-
-  if (chartInstance) chartInstance.destroy();
-  const ctx = document.getElementById('priceChart').getContext('2d');
-  const grad = ctx.createLinearGradient(0,0,0,160);
-  grad.addColorStop(0, isUp ? 'rgba(34,197,94,.25)' : 'rgba(239,68,68,.25)');
-  grad.addColorStop(1, 'rgba(0,0,0,0)');
-
-  chartInstance = new Chart(ctx, {
-    type:'line',
-    data:{labels,datasets:[{data:prices,borderColor:isUp?'#22c55e':'#ef4444',backgroundColor:grad,borderWidth:1.5,pointRadius:0,tension:.3,fill:true}]},
-    options:{responsive:true,plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>`$${c.parsed.y.toFixed(2)}`}}},
-      scales:{x:{ticks:{color:'#475569',font:{size:9},maxTicksLimit:6},grid:{color:'#1e2530'}},
-              y:{ticks:{color:'#475569',font:{size:9},callback:v=>`$${v.toFixed(0)}`},grid:{color:'#1e2530'}}}}
-  });
-}
-
-function switchTF(tf, event) {
-  currentTF = tf;
-  document.querySelectorAll('.tf-btn').forEach(b => b.classList.remove('active'));
-  event.target.classList.add('active');
-  if (priceHistory.length) renderChart(priceHistory, tf);
-}
-
-// ============ INDICATORS ============
-function computeIndicators(closes) {
-  if (closes.length < 50) return;
-  const rsiArr = calcRSI(closes,14);
-  const rsiVal = rsiArr[rsiArr.length-1];
-  const rsiColor = rsiVal>70?'var(--sell)':rsiVal<30?'var(--buy)':'var(--gold)';
-  document.getElementById('rsi-val').textContent = rsiVal.toFixed(1);
-  document.getElementById('rsi-val').style.color = rsiColor;
-  document.getElementById('rsi-bar').style.cssText = `width:${rsiVal}%;background:${rsiColor}`;
-  document.getElementById('rsi-status').textContent = rsiVal>70?'OVERBOUGHT':rsiVal<30?'OVERSOLD':'NETRAL';
-  document.getElementById('rsi-status').style.color = rsiColor;
-
-  const e20 = calcEMA(closes,20); const e50 = calcEMA(closes,50);
-  const emaBull = e20[e20.length-1] > e50[e50.length-1];
-  document.getElementById('ema-val').textContent = emaBull?'▲':'▼';
-  document.getElementById('ema-val').style.color = emaBull?'var(--buy)':'var(--sell)';
-  document.getElementById('ema-status').textContent = emaBull?'BULLISH':'BEARISH';
-  document.getElementById('ema-status').style.color = emaBull?'var(--buy)':'var(--sell)';
-  document.getElementById('ema-bar').style.cssText = `width:${emaBull?'75':'25'}%;background:${emaBull?'var(--buy)':'var(--sell)'}`;
-
-  const macd = calcMACD(closes); const macdV = macd[macd.length-1]; const macdBull = macdV>0;
-  document.getElementById('macd-val').textContent = macdV.toFixed(2);
-  document.getElementById('macd-val').style.color = macdBull?'var(--buy)':'var(--sell)';
-  document.getElementById('macd-status').textContent = macdBull?'BULLISH':'BEARISH';
-  document.getElementById('macd-status').style.color = macdBull?'var(--buy)':'var(--sell)';
-  document.getElementById('macd-bar').style.cssText = `width:${macdBull?'70':'30'}%;background:${macdBull?'var(--buy)':'var(--sell)'}`;
-
-  const bb = calcBB(closes,20); const last = closes[closes.length-1];
-  const bbPos = Math.min(100,Math.max(0,(last-bb.lower)/(bb.upper-bb.lower)*100));
-  const bbColor = bbPos>80?'var(--sell)':bbPos<20?'var(--buy)':'var(--gold)';
-  document.getElementById('bb-val').textContent = bbPos.toFixed(0)+'%';
-  document.getElementById('bb-val').style.color = bbColor;
-  document.getElementById('bb-status').textContent = bbPos>80?'ATAS BAND':bbPos<20?'BAWAH BAND':'TENGAH';
-  document.getElementById('bb-status').style.color = bbColor;
-  document.getElementById('bb-bar').style.cssText = `width:${bbPos}%;background:${bbColor}`;
-}
-
-// ============ M5 ENTRY BOX ============
-function updateEntryBox(closes) {
-  if (closes.length < 50) return;
-  const last = closes[closes.length-1];
-
-  // H1 analysis (gunakan semua data, 1 bar = 1 jam)
-  const h1closes = closes.slice(-48);
-  const h1rsi = calcRSI(h1closes,14); const h1rsiV = h1rsi[h1rsi.length-1];
-  const h1ema20 = calcEMA(h1closes,20); const h1ema50 = calcEMA(h1closes,50);
-  const h1bull = h1ema20[h1ema20.length-1] > h1ema50[h1ema50.length-1];
-  const h1macd = calcMACD(h1closes); const h1macdV = h1macd[h1macd.length-1];
-  const h1score = (h1bull?1:0) + (h1macdV>0?1:0) + (h1rsiV>50?1:0);
-  const h1dir = h1score >= 2 ? 'BUY' : 'SELL';
-
-  // H4 analysis
-  const h4closes = closes.filter((_,i)=>i%4===0).slice(-20);
-  const h4rsi = calcRSI(h4closes, Math.min(14,h4closes.length-1));
-  const h4rsiV = h4rsi[h4rsi.length-1];
-  const h4ema20 = calcEMA(h4closes, Math.min(20,h4closes.length-1));
-  const h4ema50 = calcEMA(h4closes, Math.min(50,h4closes.length-1));
-  const h4bull = h4ema20[h4ema20.length-1] > h4ema50[h4ema50.length-1];
-  const h4macd = calcMACD(h4closes); const h4macdV = h4macd[h4macd.length-1];
-  const h4score = (h4bull?1:0) + (h4macdV>0?1:0) + (h4rsiV>50?1:0);
-  const h4dir = h4score >= 2 ? 'BUY' : 'SELL';
-
-  // M5 signal (gunakan 12 candle terakhir sebagai proxy M5)
-  const m5closes = closes.slice(-12);
-  const m5rsi = calcRSI(m5closes, Math.min(7,m5closes.length-1));
-  const m5rsiV = m5rsi[m5rsi.length-1];
-  const m5ema = calcEMA(m5closes, Math.min(8,m5closes.length-1));
-  const m5trend = m5closes[m5closes.length-1] > m5closes[m5closes.length-4] ? 'BUY' : 'SELL';
-
-  // Konfirmasi: H1 + H4 harus sejalan
-  const aligned = h1dir === h4dir;
-  const finalDir = aligned ? h1dir : 'WAIT';
-
-  const ep = document.getElementById('entry-price');
-  const esl = document.getElementById('entry-sl');
-  const etp = document.getElementById('entry-tp');
-  const ef = document.getElementById('entry-filter');
-
-  if (finalDir === 'BUY') {
-    const sl = (last * 0.9975).toFixed(2);
-    const tp = (last * 1.007).toFixed(2);
-    ep.textContent = `$${last.toFixed(2)}`; ep.style.color = 'var(--buy)';
-    esl.textContent = `$${sl}`;
-    etp.textContent = `$${tp}`;
-    ef.innerHTML = `
-      <span class="filter-tag filter-ok">H1: ${h1dir} ✓</span>
-      <span class="filter-tag filter-ok">H4: ${h4dir} ✓</span>
-      <span class="filter-tag ${m5trend==='BUY'?'filter-ok':'filter-no'}">M5: ${m5trend}</span>`;
-  } else if (finalDir === 'SELL') {
-    const sl = (last * 1.0025).toFixed(2);
-    const tp = (last * 0.993).toFixed(2);
-    ep.textContent = `$${last.toFixed(2)}`; ep.style.color = 'var(--sell)';
-    esl.textContent = `$${sl}`;
-    etp.textContent = `$${tp}`;
-    ef.innerHTML = `
-      <span class="filter-tag filter-no">H1: ${h1dir} ✓</span>
-      <span class="filter-tag filter-no">H4: ${h4dir} ✓</span>
-      <span class="filter-tag ${m5trend==='SELL'?'filter-no':'filter-ok'}">M5: ${m5trend}</span>`;
-  } else {
-    ep.textContent = '-'; ep.style.color = 'var(--gold)';
-    esl.textContent = '-'; etp.textContent = '-';
-    ef.innerHTML = `
-      <span class="filter-tag filter-wait">H1: ${h1dir}</span>
-      <span class="filter-tag filter-wait">H4: ${h4dir}</span>
-      <span class="filter-tag filter-wait">⚠ H1 vs H4 Konflik</span>`;
-  }
-  return { finalDir, h1dir, h4dir, m5trend };
-}
-
-// ============ MATH ============
-function calcEMA(data, period) {
-  const k = 2/(period+1); let ema = [data[0]];
-  for (let i=1;i<data.length;i++) ema.push(data[i]*k+ema[i-1]*(1-k));
-  return ema;
-}
-function calcRSI(data, period=14) {
-  let gains=[],losses=[];
-  for(let i=1;i<data.length;i++){const d=data[i]-data[i-1];gains.push(d>0?d:0);losses.push(d<0?Math.abs(d):0);}
-  const p=Math.min(period,gains.length);
-  let ag=gains.slice(0,p).reduce((a,b)=>a+b)/p, al=losses.slice(0,p).reduce((a,b)=>a+b)/p;
-  let rsi=[100-100/(1+(al===0?9999:ag/al))];
-  for(let i=p;i<gains.length;i++){ag=(ag*(p-1)+gains[i])/p;al=(al*(p-1)+losses[i])/p;rsi.push(100-100/(1+(al===0?9999:ag/al)));}
-  return rsi;
-}
-function calcMACD(data) {
-  const e12=calcEMA(data,Math.min(12,data.length-1));
-  const e26=calcEMA(data,Math.min(26,data.length-1));
-  return e12.map((v,i)=>v-e26[i]);
-}
-function calcBB(data, period=20) {
-  const s=data.slice(-period), m=s.reduce((a,b)=>a+b)/period;
-  const std=Math.sqrt(s.reduce((a,b)=>a+(b-m)**2,0)/period);
-  return {upper:m+2*std, lower:m-2*std, mid:m};
-}
-
-// ============ MTF ============
-function buildMTFData(closes) {
-  const tfs = [
-    {name:'M5', slice:closes.slice(-12), highlight:true},
-    {name:'M15',slice:closes.slice(-16)},
-    {name:'H1', slice:closes.slice(-48)},
-    {name:'H4', slice:closes.filter((_,i)=>i%4===0).slice(-20)},
-    {name:'D1', slice:closes.filter((_,i)=>i%24===0).slice(-10)},
-  ];
-  return tfs.map(tf => {
-    if (tf.slice.length < 5) return {name:tf.name, trend:'--', rsi:'--', ema:'--', signal:'NETRAL', highlight:tf.highlight};
-    const p = Math.min(14, tf.slice.length-1);
-    const rsiArr = calcRSI(tf.slice, p);
-    const rsi = rsiArr[rsiArr.length-1];
-    const ep = Math.min(20, tf.slice.length-1);
-    const ep2 = Math.min(50, tf.slice.length-1);
-    const ema20 = calcEMA(tf.slice, ep);
-    const ema50 = calcEMA(tf.slice, ep2);
-    const emaBull = ema20[ema20.length-1] > ema50[ema50.length-1];
-    const trend = tf.slice[tf.slice.length-1] > tf.slice[0] ? 'NAIK' : 'TURUN';
-    let signal = 'NETRAL';
-    if (emaBull && rsi<65 && rsi>35) signal='BUY';
-    else if (!emaBull && rsi>35 && rsi<65) signal='SELL';
-    else if (emaBull && rsi<35) signal='BUY';
-    else if (!emaBull && rsi>65) signal='SELL';
-    return {name:tf.name, trend, rsi:rsi.toFixed(1), ema:emaBull?'BULLISH':'BEARISH', signal, highlight:tf.highlight};
-  });
-}
-
-function renderMTF(mtfData) {
-  document.getElementById('mtf-body').innerHTML = mtfData.map(row => `
-    <tr${row.highlight?' class="highlight-m5"':''}>
-      <td style="font-weight:700;color:${row.highlight?'var(--gold)':'var(--text)'}">${row.name}${row.highlight?' ←':''}</td>
-      <td style="color:${row.trend==='NAIK'?'var(--buy)':'var(--sell)'}">${row.trend}</td>
-      <td style="color:var(--text)">${row.rsi}</td>
-      <td style="color:${row.ema==='BULLISH'?'var(--buy)':'var(--sell)'}">${row.ema}</td>
-      <td><span class="badge badge-${row.signal==='BUY'?'buy':row.signal==='SELL'?'sell':'neu'}">${row.signal}</span></td>
-    </tr>`).join('');
-}
-
-// ============ SIGNAL ============
-function computeSignal(closes) {
-  const rsiArr = calcRSI(closes,14); const rsi = rsiArr[rsiArr.length-1];
-  const ema20 = calcEMA(closes,20); const ema50 = calcEMA(closes,50);
-  const e20=ema20[ema20.length-1], e50=ema50[ema50.length-1];
-  const macd=calcMACD(closes); const macdV=macd[macd.length-1];
-  const emaBull=e20>e50, macdBull=macdV>0, last=closes[closes.length-1];
-  let score=0;
-  if(emaBull)score++; if(macdBull)score++; if(rsi<50)score++; if(rsi<40)score++;
-  let signal,conf,tp,sl;
-  if(score>=3){signal='BUY';conf=score===4?'Keyakinan Tinggi (4/4)':'Keyakinan Sedang (3/4)';tp=(last*1.005).toFixed(2);sl=(last*.998).toFixed(2);}
-  else if(score<=1){signal='SELL';conf=score===0?'Keyakinan Tinggi (4/4)':'Keyakinan Sedang';tp=(last*.995).toFixed(2);sl=(last*1.002).toFixed(2);}
-  else{signal='WAIT';conf='Pasar sideways / sinyal campur';tp='-';sl='-';}
-  const rr=(tp!=='-'&&sl!=='-')?(Math.abs(last-parseFloat(tp))/Math.abs(last-parseFloat(sl))).toFixed(2):'-';
-  return {signal,conf,tp,sl,rr,rsi,e20,e50,macdV};
-}
-
-function updateSignalUI(s) {
-  document.getElementById('signal-banner').className = `signal-banner ${s.signal}`;
-  const sv = document.getElementById('signal-text');
-  sv.textContent = s.signal; sv.className = `signal-value ${s.signal}`;
-  document.getElementById('signal-conf').textContent = s.conf;
-  document.getElementById('level-tp').textContent = s.tp!=='-'?`$${s.tp}`:'-';
-  document.getElementById('level-sl').textContent = s.sl!=='-'?`$${s.sl}`:'-';
-  document.getElementById('level-rr').textContent = s.rr!=='-'?`1:${s.rr}`:'-';
-}
-
-// ============ SIGNAL HISTORY ============
-function addHistory(signal, price, tp, sl) {
-  const entry = {signal, price, tp, sl, time: new Date().toLocaleString('id-ID')};
-  signalHistory.unshift(entry);
-  if (signalHistory.length > 50) signalHistory.pop();
-  localStorage.setItem('xauai_history', JSON.stringify(signalHistory));
-  renderHistory();
-}
-
-function renderHistory() {
-  const list = document.getElementById('history-list');
-  if (!signalHistory.length) { list.innerHTML = '<div style="color:var(--text-dim);font-size:12px;text-align:center;padding:20px;">Belum ada log sinyal</div>'; return; }
-  list.innerHTML = signalHistory.slice(0,20).map(h => `
-    <div class="history-item">
-      <div>
-        <div class="history-signal" style="color:${h.signal==='BUY'?'var(--buy)':h.signal==='SELL'?'var(--sell)':'var(--gold)'}">${h.signal}</div>
-        <div class="history-time">${h.time}</div>
-      </div>
-      <div style="text-align:right">
-        <div class="history-price">$${h.price}</div>
-        <div style="font-size:10px;color:var(--text-dim)">TP:$${h.tp} SL:$${h.sl}</div>
-      </div>
-    </div>`).join('');
-}
-
-function clearHistory() {
-  signalHistory = [];
-  localStorage.removeItem('xauai_history');
-  renderHistory();
-  showToast('Log dihapus');
-}
-
-// ============ AI ANALYSIS ============
-async function runFullAnalysis(silent=false) {
-  if (!apiKey) {
-    if (!silent) {
-      document.getElementById('ai-output').innerHTML =
-        '<span style="color:var(--sell)">⚠ Masukkan Groq API key dulu di tab AI</span>';
-      switchNav('ai');
-    }
-    return;
-  }
-  if (!currentPrice) {
-    if (!silent) document.getElementById('ai-output').innerHTML = '<span style="color:var(--sell)">⚠ Data harga belum dimuat.</span>';
-    return;
-  }
-
-  const closes = priceHistory.map(x => x.c);
-  const mtfData = buildMTFData(closes);
-  renderMTF(mtfData);
-  const sig = computeSignal(closes);
-  updateSignalUI(sig);
-  const entryInfo = updateEntryBox(closes);
-
-  // Save to history
-  if (sig.signal !== 'WAIT' && sig.signal !== lastSignal) {
-    addHistory(sig.signal, currentPrice.toFixed(2), sig.tp, sig.sl);
-    sendNotif(`XAUAIBOT: ${sig.signal}`, `Entry $${currentPrice.toFixed(2)} · TP $${sig.tp} · SL $${sig.sl}`);
-    lastSignal = sig.signal;
-  }
-
-  const mtfSummary = mtfData.map(r=>`${r.name}: Trend ${r.trend}, RSI ${r.rsi}, EMA ${r.ema}, Sinyal ${r.signal}`).join('\n');
-
-  const prompt = `Kamu adalah AI trader profesional XAU/USD (emas). Analisis kondisi pasar dan berikan rekomendasi entry M5 dengan konfirmasi H1 dan H4 dalam bahasa Indonesia.
-
-DATA PASAR:
-- Harga XAU/USD: $${currentPrice.toFixed(2)}
-- RSI H1: ${sig.rsi.toFixed(1)} | EMA H1: ${sig.e20>sig.e50?'Bullish':'Bearish'}
-- MACD: ${sig.macdV.toFixed(3)}
-- Sinyal keseluruhan: ${sig.signal} (${sig.conf})
-- Entry M5 vs H1+H4: H1=${entryInfo?.h1dir||'-'}, H4=${entryInfo?.h4dir||'-'}, M5=${entryInfo?.m5trend||'-'}
-
-ANALISIS MTF LENGKAP:
-${mtfSummary}
-
-LEVEL TRADING:
-- Entry: $${currentPrice.toFixed(2)}
-- Take Profit: $${sig.tp}
-- Stop Loss: $${sig.sl}
-- Risk/Reward: ${sig.rr}
-
-Berikan analisis singkat format:
-1. 📊 Kondisi (2 kalimat: H1 dan H4)
-2. 🎯 Entry M5 (kapan masuk, konfirmasi apa yang dicari di M5)
-3. ⚠️ Risiko (1 kalimat)
-4. 💡 Eksekusi (1-2 kalimat)`;
-
-  const btn = document.getElementById('analyze-btn');
-  if (!silent) {
-    btn.disabled = true; btn.innerHTML = '<span>⏳ Menganalisis...</span>';
-    document.getElementById('ai-output').innerHTML = '<div class="ai-typing"><div class="dot"></div><div class="dot"></div><div class="dot"></div></div>';
-  }
-
-  try {
-    const res = await fetch('https://api.groq.com/openai/v1/chat/completions', {
-      method:'POST',
-      headers:{'Content-Type':'application/json','Authorization':`Bearer ${apiKey}`},
-      body:JSON.stringify({model:'llama-3.1-8b-instant',max_tokens:700,temperature:0.4,messages:[{role:'user',content:prompt}]})
-    });
-    const data = await res.json();
-    if (data.error) throw new Error(data.error.message||'Groq error');
-    const text = data.choices?.[0]?.message?.content;
-    if (!text) throw new Error('Response kosong');
-    if (!silent) {
-      document.getElementById('ai-output').innerHTML =
-        text.replace(/\n/g,'<br>').replace(/\*\*(.*?)\*\*/g,'<strong>$1</strong>').replace(/\*(.*?)\*/g,'<em>$1</em>');
-    }
-    if (silent) showToast(`✓ Auto-analisis: ${sig.signal}`);
-  } catch(e) {
-    if (!silent) document.getElementById('ai-output').innerHTML =
-      `<span style="color:var(--sell)">⚠ Error: ${e.message}</span><br><span style="color:var(--text-dim);font-size:11px">Cek key di <a href="https://console.groq.com" target="_blank" style="color:var(--gold)">console.groq.com</a></span>`;
-  } finally {
-    btn.disabled = false; btn.innerHTML = '⚡ Analisis AI Sekarang';
-  }
-}
-</script>
-</body>
-</html>
+      <div class="
